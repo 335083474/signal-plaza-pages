@@ -1,0 +1,1893 @@
+{
+  "schemaVersion": 1,
+  "strategyId": "strategy.market_cycle_core.v1",
+  "name": "A股低位趋势双门控 v1",
+  "status": "BACKTESTED",
+  "period": "2019-01-02 至 2026-08-04",
+  "asOf": "2026-08-04",
+  "method": "收盘确认，下一交易日开盘执行；MA200趋势门与20%回撤低位门任一满足即持有",
+  "indicators": [
+    {
+      "name": "中证全指收盘价",
+      "role": "市场代理",
+      "formula": "000985.CSI Close",
+      "trigger": "作为A股整体价格代理"
+    },
+    {
+      "name": "200日移动平均线",
+      "role": "趋势指标",
+      "formula": "MA200 = mean(Close, 200)",
+      "trigger": "Close > MA200"
+    },
+    {
+      "name": "252日高点回撤",
+      "role": "低位指标",
+      "formula": "Drawdown252 = Close / max(Close, 252) - 1",
+      "trigger": "Drawdown252 ≤ -20%"
+    }
+  ],
+  "positionRule": "Close > MA200 OR Drawdown252 ≤ -20% 时持有100%，否则持有现金",
+  "costs": {
+    "oneWayPct": 0.105,
+    "roundTripPct": 0.21
+  },
+  "performance": {
+    "tradingDays": 1840,
+    "totalReturnPct": 62.48,
+    "annualReturnPct": 6.87,
+    "annualVolatilityPct": 19.35,
+    "sharpe": 0.44,
+    "maxDrawdownPct": -30.68,
+    "exposurePct": 72.39,
+    "positionChanges": 87
+  },
+  "initialCapital": 1000000,
+  "equityCurve": [
+    {
+      "date": "2019-01-02",
+      "capital": 986974,
+      "benchmarkCapital": 986974
+    },
+    {
+      "date": "2019-01-09",
+      "capital": 1026663,
+      "benchmarkCapital": 1026663
+    },
+    {
+      "date": "2019-01-16",
+      "capital": 1040790,
+      "benchmarkCapital": 1040790
+    },
+    {
+      "date": "2019-01-23",
+      "capital": 1040979,
+      "benchmarkCapital": 1040979
+    },
+    {
+      "date": "2019-01-30",
+      "capital": 1026813,
+      "benchmarkCapital": 1026813
+    },
+    {
+      "date": "2019-02-13",
+      "capital": 1098951,
+      "benchmarkCapital": 1098951
+    },
+    {
+      "date": "2019-02-20",
+      "capital": 1130597,
+      "benchmarkCapital": 1130597
+    },
+    {
+      "date": "2019-02-27",
+      "capital": 1206953,
+      "benchmarkCapital": 1206953
+    },
+    {
+      "date": "2019-03-06",
+      "capital": 1283542,
+      "benchmarkCapital": 1283542
+    },
+    {
+      "date": "2019-03-13",
+      "capital": 1262940,
+      "benchmarkCapital": 1262940
+    },
+    {
+      "date": "2019-03-20",
+      "capital": 1299398,
+      "benchmarkCapital": 1299398
+    },
+    {
+      "date": "2019-03-27",
+      "capital": 1268753,
+      "benchmarkCapital": 1268753
+    },
+    {
+      "date": "2019-04-03",
+      "capital": 1370680,
+      "benchmarkCapital": 1370680
+    },
+    {
+      "date": "2019-04-11",
+      "capital": 1346293,
+      "benchmarkCapital": 1346293
+    },
+    {
+      "date": "2019-04-18",
+      "capital": 1369633,
+      "benchmarkCapital": 1369633
+    },
+    {
+      "date": "2019-04-25",
+      "capital": 1306420,
+      "benchmarkCapital": 1306420
+    },
+    {
+      "date": "2019-05-07",
+      "capital": 1189747,
+      "benchmarkCapital": 1189747
+    },
+    {
+      "date": "2019-05-14",
+      "capital": 1215041,
+      "benchmarkCapital": 1215041
+    },
+    {
+      "date": "2019-05-21",
+      "capital": 1212499,
+      "benchmarkCapital": 1212499
+    },
+    {
+      "date": "2019-05-28",
+      "capital": 1202917,
+      "benchmarkCapital": 1202917
+    },
+    {
+      "date": "2019-06-04",
+      "capital": 1186933,
+      "benchmarkCapital": 1186933
+    },
+    {
+      "date": "2019-06-12",
+      "capital": 1202005,
+      "benchmarkCapital": 1202005
+    },
+    {
+      "date": "2019-06-19",
+      "capital": 1205641,
+      "benchmarkCapital": 1205641
+    },
+    {
+      "date": "2019-06-26",
+      "capital": 1235200,
+      "benchmarkCapital": 1235200
+    },
+    {
+      "date": "2019-07-03",
+      "capital": 1257451,
+      "benchmarkCapital": 1257451
+    },
+    {
+      "date": "2019-07-10",
+      "capital": 1221299,
+      "benchmarkCapital": 1221299
+    },
+    {
+      "date": "2019-07-17",
+      "capital": 1223030,
+      "benchmarkCapital": 1223030
+    },
+    {
+      "date": "2019-07-24",
+      "capital": 1221563,
+      "benchmarkCapital": 1221563
+    },
+    {
+      "date": "2019-07-31",
+      "capital": 1219963,
+      "benchmarkCapital": 1219963
+    },
+    {
+      "date": "2019-08-07",
+      "capital": 1164611,
+      "benchmarkCapital": 1162028
+    },
+    {
+      "date": "2019-08-14",
+      "capital": 1129434,
+      "benchmarkCapital": 1150202
+    },
+    {
+      "date": "2019-08-21",
+      "capital": 1195151,
+      "benchmarkCapital": 1217127
+    },
+    {
+      "date": "2019-08-28",
+      "capital": 1203424,
+      "benchmarkCapital": 1225553
+    },
+    {
+      "date": "2019-09-04",
+      "capital": 1238704,
+      "benchmarkCapital": 1261481
+    },
+    {
+      "date": "2019-09-11",
+      "capital": 1259606,
+      "benchmarkCapital": 1282768
+    },
+    {
+      "date": "2019-09-19",
+      "capital": 1255649,
+      "benchmarkCapital": 1278738
+    },
+    {
+      "date": "2019-09-26",
+      "capital": 1210072,
+      "benchmarkCapital": 1232323
+    },
+    {
+      "date": "2019-10-10",
+      "capital": 1229610,
+      "benchmarkCapital": 1252221
+    },
+    {
+      "date": "2019-10-17",
+      "capital": 1235707,
+      "benchmarkCapital": 1258429
+    },
+    {
+      "date": "2019-10-24",
+      "capital": 1216036,
+      "benchmarkCapital": 1238397
+    },
+    {
+      "date": "2019-10-31",
+      "capital": 1212669,
+      "benchmarkCapital": 1234968
+    },
+    {
+      "date": "2019-11-07",
+      "capital": 1247981,
+      "benchmarkCapital": 1270929
+    },
+    {
+      "date": "2019-11-14",
+      "capital": 1214775,
+      "benchmarkCapital": 1237113
+    },
+    {
+      "date": "2019-11-21",
+      "capital": 1205092,
+      "benchmarkCapital": 1239415
+    },
+    {
+      "date": "2019-11-28",
+      "capital": 1189909,
+      "benchmarkCapital": 1221876
+    },
+    {
+      "date": "2019-12-05",
+      "capital": 1189909,
+      "benchmarkCapital": 1237620
+    },
+    {
+      "date": "2019-12-12",
+      "capital": 1195857,
+      "benchmarkCapital": 1254537
+    },
+    {
+      "date": "2019-12-19",
+      "capital": 1235991,
+      "benchmarkCapital": 1296640
+    },
+    {
+      "date": "2019-12-26",
+      "capital": 1233650,
+      "benchmarkCapital": 1294185
+    },
+    {
+      "date": "2020-01-03",
+      "capital": 1262464,
+      "benchmarkCapital": 1324412
+    },
+    {
+      "date": "2020-01-10",
+      "capital": 1284510,
+      "benchmarkCapital": 1347540
+    },
+    {
+      "date": "2020-01-17",
+      "capital": 1288648,
+      "benchmarkCapital": 1351881
+    },
+    {
+      "date": "2020-02-03",
+      "capital": 1111366,
+      "benchmarkCapital": 1165900
+    },
+    {
+      "date": "2020-02-10",
+      "capital": 1127126,
+      "benchmarkCapital": 1291329
+    },
+    {
+      "date": "2020-02-17",
+      "capital": 1170933,
+      "benchmarkCapital": 1341517
+    },
+    {
+      "date": "2020-02-24",
+      "capital": 1190418,
+      "benchmarkCapital": 1363841
+    },
+    {
+      "date": "2020-03-02",
+      "capital": 1199886,
+      "benchmarkCapital": 1374689
+    },
+    {
+      "date": "2020-03-09",
+      "capital": 1154591,
+      "benchmarkCapital": 1322795
+    },
+    {
+      "date": "2020-03-16",
+      "capital": 1096231,
+      "benchmarkCapital": 1255933
+    },
+    {
+      "date": "2020-03-23",
+      "capital": 1095080,
+      "benchmarkCapital": 1213329
+    },
+    {
+      "date": "2020-03-30",
+      "capital": 1095080,
+      "benchmarkCapital": 1229416
+    },
+    {
+      "date": "2020-04-07",
+      "capital": 1095080,
+      "benchmarkCapital": 1262282
+    },
+    {
+      "date": "2020-04-14",
+      "capital": 1080910,
+      "benchmarkCapital": 1272535
+    },
+    {
+      "date": "2020-04-21",
+      "capital": 1075708,
+      "benchmarkCapital": 1267743
+    },
+    {
+      "date": "2020-04-28",
+      "capital": 1068064,
+      "benchmarkCapital": 1258734
+    },
+    {
+      "date": "2020-05-08",
+      "capital": 1118393,
+      "benchmarkCapital": 1318048
+    },
+    {
+      "date": "2020-05-15",
+      "capital": 1109759,
+      "benchmarkCapital": 1307873
+    },
+    {
+      "date": "2020-05-22",
+      "capital": 1078303,
+      "benchmarkCapital": 1270802
+    },
+    {
+      "date": "2020-05-29",
+      "capital": 1103754,
+      "benchmarkCapital": 1300796
+    },
+    {
+      "date": "2020-06-05",
+      "capital": 1138868,
+      "benchmarkCapital": 1342178
+    },
+    {
+      "date": "2020-06-12",
+      "capital": 1131565,
+      "benchmarkCapital": 1333571
+    },
+    {
+      "date": "2020-06-19",
+      "capital": 1164949,
+      "benchmarkCapital": 1372915
+    },
+    {
+      "date": "2020-06-30",
+      "capital": 1185794,
+      "benchmarkCapital": 1397482
+    },
+    {
+      "date": "2020-07-07",
+      "capital": 1307507,
+      "benchmarkCapital": 1540922
+    },
+    {
+      "date": "2020-07-14",
+      "capital": 1372771,
+      "benchmarkCapital": 1617837
+    },
+    {
+      "date": "2020-07-21",
+      "capital": 1326675,
+      "benchmarkCapital": 1563513
+    },
+    {
+      "date": "2020-07-28",
+      "capital": 1289062,
+      "benchmarkCapital": 1519185
+    },
+    {
+      "date": "2020-08-04",
+      "capital": 1358725,
+      "benchmarkCapital": 1601284
+    },
+    {
+      "date": "2020-08-11",
+      "capital": 1331709,
+      "benchmarkCapital": 1569445
+    },
+    {
+      "date": "2020-08-18",
+      "capital": 1371818,
+      "benchmarkCapital": 1616714
+    },
+    {
+      "date": "2020-08-25",
+      "capital": 1352475,
+      "benchmarkCapital": 1593918
+    },
+    {
+      "date": "2020-09-01",
+      "capital": 1374715,
+      "benchmarkCapital": 1620128
+    },
+    {
+      "date": "2020-09-08",
+      "capital": 1318496,
+      "benchmarkCapital": 1553873
+    },
+    {
+      "date": "2020-09-15",
+      "capital": 1315304,
+      "benchmarkCapital": 1550112
+    },
+    {
+      "date": "2020-09-22",
+      "capital": 1307135,
+      "benchmarkCapital": 1540484
+    },
+    {
+      "date": "2020-09-29",
+      "capital": 1285941,
+      "benchmarkCapital": 1515506
+    },
+    {
+      "date": "2020-10-14",
+      "capital": 1348657,
+      "benchmarkCapital": 1589418
+    },
+    {
+      "date": "2020-10-21",
+      "capital": 1327231,
+      "benchmarkCapital": 1564168
+    },
+    {
+      "date": "2020-10-28",
+      "capital": 1298108,
+      "benchmarkCapital": 1529846
+    },
+    {
+      "date": "2020-11-04",
+      "capital": 1334979,
+      "benchmarkCapital": 1573299
+    },
+    {
+      "date": "2020-11-11",
+      "capital": 1342073,
+      "benchmarkCapital": 1581659
+    },
+    {
+      "date": "2020-11-18",
+      "capital": 1336100,
+      "benchmarkCapital": 1574620
+    },
+    {
+      "date": "2020-11-25",
+      "capital": 1340888,
+      "benchmarkCapital": 1580263
+    },
+    {
+      "date": "2020-12-02",
+      "capital": 1370200,
+      "benchmarkCapital": 1614808
+    },
+    {
+      "date": "2020-12-09",
+      "capital": 1338373,
+      "benchmarkCapital": 1577299
+    },
+    {
+      "date": "2020-12-16",
+      "capital": 1337760,
+      "benchmarkCapital": 1576576
+    },
+    {
+      "date": "2020-12-23",
+      "capital": 1351553,
+      "benchmarkCapital": 1592832
+    },
+    {
+      "date": "2020-12-30",
+      "capital": 1365400,
+      "benchmarkCapital": 1609151
+    },
+    {
+      "date": "2021-01-07",
+      "capital": 1437506,
+      "benchmarkCapital": 1694129
+    },
+    {
+      "date": "2021-01-14",
+      "capital": 1414289,
+      "benchmarkCapital": 1666768
+    },
+    {
+      "date": "2021-01-21",
+      "capital": 1450714,
+      "benchmarkCapital": 1709695
+    },
+    {
+      "date": "2021-01-28",
+      "capital": 1406485,
+      "benchmarkCapital": 1657570
+    },
+    {
+      "date": "2021-02-04",
+      "capital": 1400882,
+      "benchmarkCapital": 1650967
+    },
+    {
+      "date": "2021-02-18",
+      "capital": 1456963,
+      "benchmarkCapital": 1717059
+    },
+    {
+      "date": "2021-02-25",
+      "capital": 1384175,
+      "benchmarkCapital": 1631277
+    },
+    {
+      "date": "2021-03-04",
+      "capital": 1365137,
+      "benchmarkCapital": 1608841
+    },
+    {
+      "date": "2021-03-11",
+      "capital": 1327814,
+      "benchmarkCapital": 1591468
+    },
+    {
+      "date": "2021-03-18",
+      "capital": 1313831,
+      "benchmarkCapital": 1576364
+    },
+    {
+      "date": "2021-03-25",
+      "capital": 1281848,
+      "benchmarkCapital": 1552096
+    },
+    {
+      "date": "2021-04-01",
+      "capital": 1295157,
+      "benchmarkCapital": 1600143
+    },
+    {
+      "date": "2021-04-09",
+      "capital": 1283304,
+      "benchmarkCapital": 1585499
+    },
+    {
+      "date": "2021-04-16",
+      "capital": 1260510,
+      "benchmarkCapital": 1575942
+    },
+    {
+      "date": "2021-04-23",
+      "capital": 1273656,
+      "benchmarkCapital": 1622265
+    },
+    {
+      "date": "2021-04-30",
+      "capital": 1262902,
+      "benchmarkCapital": 1608568
+    },
+    {
+      "date": "2021-05-12",
+      "capital": 1243346,
+      "benchmarkCapital": 1587188
+    },
+    {
+      "date": "2021-05-19",
+      "capital": 1251076,
+      "benchmarkCapital": 1627596
+    },
+    {
+      "date": "2021-05-26",
+      "capital": 1282453,
+      "benchmarkCapital": 1668416
+    },
+    {
+      "date": "2021-06-02",
+      "capital": 1288263,
+      "benchmarkCapital": 1675975
+    },
+    {
+      "date": "2021-06-09",
+      "capital": 1284242,
+      "benchmarkCapital": 1670743
+    },
+    {
+      "date": "2021-06-17",
+      "capital": 1261527,
+      "benchmarkCapital": 1641192
+    },
+    {
+      "date": "2021-06-24",
+      "capital": 1284777,
+      "benchmarkCapital": 1671440
+    },
+    {
+      "date": "2021-07-01",
+      "capital": 1289025,
+      "benchmarkCapital": 1676967
+    },
+    {
+      "date": "2021-07-08",
+      "capital": 1278944,
+      "benchmarkCapital": 1663851
+    },
+    {
+      "date": "2021-07-15",
+      "capital": 1304377,
+      "benchmarkCapital": 1696939
+    },
+    {
+      "date": "2021-07-22",
+      "capital": 1317144,
+      "benchmarkCapital": 1713548
+    },
+    {
+      "date": "2021-07-29",
+      "capital": 1221323,
+      "benchmarkCapital": 1629456
+    },
+    {
+      "date": "2021-08-05",
+      "capital": 1252311,
+      "benchmarkCapital": 1672556
+    },
+    {
+      "date": "2021-08-12",
+      "capital": 1263333,
+      "benchmarkCapital": 1687277
+    },
+    {
+      "date": "2021-08-19",
+      "capital": 1231100,
+      "benchmarkCapital": 1644227
+    },
+    {
+      "date": "2021-08-26",
+      "capital": 1245206,
+      "benchmarkCapital": 1663066
+    },
+    {
+      "date": "2021-09-02",
+      "capital": 1264318,
+      "benchmarkCapital": 1688592
+    },
+    {
+      "date": "2021-09-09",
+      "capital": 1295232,
+      "benchmarkCapital": 1729880
+    },
+    {
+      "date": "2021-09-16",
+      "capital": 1261245,
+      "benchmarkCapital": 1684488
+    },
+    {
+      "date": "2021-09-27",
+      "capital": 1247582,
+      "benchmarkCapital": 1666240
+    },
+    {
+      "date": "2021-10-11",
+      "capital": 1219665,
+      "benchmarkCapital": 1669733
+    },
+    {
+      "date": "2021-10-18",
+      "capital": 1204951,
+      "benchmarkCapital": 1667032
+    },
+    {
+      "date": "2021-10-25",
+      "capital": 1226095,
+      "benchmarkCapital": 1696284
+    },
+    {
+      "date": "2021-11-01",
+      "capital": 1196798,
+      "benchmarkCapital": 1672882
+    },
+    {
+      "date": "2021-11-08",
+      "capital": 1184360,
+      "benchmarkCapital": 1668529
+    },
+    {
+      "date": "2021-11-15",
+      "capital": 1197295,
+      "benchmarkCapital": 1686752
+    },
+    {
+      "date": "2021-11-22",
+      "capital": 1219699,
+      "benchmarkCapital": 1718315
+    },
+    {
+      "date": "2021-11-29",
+      "capital": 1218664,
+      "benchmarkCapital": 1716857
+    },
+    {
+      "date": "2021-12-06",
+      "capital": 1222764,
+      "benchmarkCapital": 1722633
+    },
+    {
+      "date": "2021-12-13",
+      "capital": 1244002,
+      "benchmarkCapital": 1752553
+    },
+    {
+      "date": "2021-12-20",
+      "capital": 1208945,
+      "benchmarkCapital": 1703164
+    },
+    {
+      "date": "2021-12-27",
+      "capital": 1218708,
+      "benchmarkCapital": 1716920
+    },
+    {
+      "date": "2022-01-04",
+      "capital": 1227920,
+      "benchmarkCapital": 1729897
+    },
+    {
+      "date": "2022-01-11",
+      "capital": 1199660,
+      "benchmarkCapital": 1690084
+    },
+    {
+      "date": "2022-01-18",
+      "capital": 1200067,
+      "benchmarkCapital": 1690658
+    },
+    {
+      "date": "2022-01-25",
+      "capital": 1167994,
+      "benchmarkCapital": 1614022
+    },
+    {
+      "date": "2022-02-08",
+      "capital": 1167994,
+      "benchmarkCapital": 1596363
+    },
+    {
+      "date": "2022-02-15",
+      "capital": 1167994,
+      "benchmarkCapital": 1603430
+    },
+    {
+      "date": "2022-02-22",
+      "capital": 1167994,
+      "benchmarkCapital": 1607014
+    },
+    {
+      "date": "2022-03-01",
+      "capital": 1167994,
+      "benchmarkCapital": 1617537
+    },
+    {
+      "date": "2022-03-08",
+      "capital": 1167994,
+      "benchmarkCapital": 1511971
+    },
+    {
+      "date": "2022-03-15",
+      "capital": 1167994,
+      "benchmarkCapital": 1435703
+    },
+    {
+      "date": "2022-03-22",
+      "capital": 1167994,
+      "benchmarkCapital": 1513437
+    },
+    {
+      "date": "2022-03-29",
+      "capital": 1167994,
+      "benchmarkCapital": 1476707
+    },
+    {
+      "date": "2022-04-07",
+      "capital": 1167994,
+      "benchmarkCapital": 1477375
+    },
+    {
+      "date": "2022-04-14",
+      "capital": 1167994,
+      "benchmarkCapital": 1443035
+    },
+    {
+      "date": "2022-04-21",
+      "capital": 1167994,
+      "benchmarkCapital": 1366311
+    },
+    {
+      "date": "2022-04-28",
+      "capital": 1124228,
+      "benchmarkCapital": 1316496
+    },
+    {
+      "date": "2022-05-10",
+      "capital": 1155792,
+      "benchmarkCapital": 1353458
+    },
+    {
+      "date": "2022-05-17",
+      "capital": 1183451,
+      "benchmarkCapital": 1385848
+    },
+    {
+      "date": "2022-05-24",
+      "capital": 1206855,
+      "benchmarkCapital": 1370334
+    },
+    {
+      "date": "2022-05-31",
+      "capital": 1236015,
+      "benchmarkCapital": 1422581
+    },
+    {
+      "date": "2022-06-08",
+      "capital": 1236015,
+      "benchmarkCapital": 1468930
+    },
+    {
+      "date": "2022-06-15",
+      "capital": 1236015,
+      "benchmarkCapital": 1487044
+    },
+    {
+      "date": "2022-06-22",
+      "capital": 1236015,
+      "benchmarkCapital": 1488020
+    },
+    {
+      "date": "2022-06-29",
+      "capital": 1236015,
+      "benchmarkCapital": 1536100
+    },
+    {
+      "date": "2022-07-06",
+      "capital": 1236015,
+      "benchmarkCapital": 1539375
+    },
+    {
+      "date": "2022-07-13",
+      "capital": 1236015,
+      "benchmarkCapital": 1507403
+    },
+    {
+      "date": "2022-07-20",
+      "capital": 1236015,
+      "benchmarkCapital": 1523950
+    },
+    {
+      "date": "2022-07-27",
+      "capital": 1236015,
+      "benchmarkCapital": 1521547
+    },
+    {
+      "date": "2022-08-03",
+      "capital": 1236015,
+      "benchmarkCapital": 1469668
+    },
+    {
+      "date": "2022-08-10",
+      "capital": 1236015,
+      "benchmarkCapital": 1506789
+    },
+    {
+      "date": "2022-08-17",
+      "capital": 1236015,
+      "benchmarkCapital": 1533169
+    },
+    {
+      "date": "2022-08-24",
+      "capital": 1236015,
+      "benchmarkCapital": 1490440
+    },
+    {
+      "date": "2022-08-31",
+      "capital": 1236015,
+      "benchmarkCapital": 1456809
+    },
+    {
+      "date": "2022-09-07",
+      "capital": 1236015,
+      "benchmarkCapital": 1478243
+    },
+    {
+      "date": "2022-09-15",
+      "capital": 1236015,
+      "benchmarkCapital": 1435520
+    },
+    {
+      "date": "2022-09-22",
+      "capital": 1231760,
+      "benchmarkCapital": 1395752
+    },
+    {
+      "date": "2022-09-29",
+      "capital": 1200433,
+      "benchmarkCapital": 1360254
+    },
+    {
+      "date": "2022-10-13",
+      "capital": 1202318,
+      "benchmarkCapital": 1362389
+    },
+    {
+      "date": "2022-10-20",
+      "capital": 1209552,
+      "benchmarkCapital": 1370587
+    },
+    {
+      "date": "2022-10-27",
+      "capital": 1182667,
+      "benchmarkCapital": 1340122
+    },
+    {
+      "date": "2022-11-03",
+      "capital": 1201794,
+      "benchmarkCapital": 1361796
+    },
+    {
+      "date": "2022-11-10",
+      "capital": 1246040,
+      "benchmarkCapital": 1411933
+    },
+    {
+      "date": "2022-11-17",
+      "capital": 1256796,
+      "benchmarkCapital": 1416825
+    },
+    {
+      "date": "2022-11-24",
+      "capital": 1243231,
+      "benchmarkCapital": 1389601
+    },
+    {
+      "date": "2022-12-01",
+      "capital": 1259714,
+      "benchmarkCapital": 1422663
+    },
+    {
+      "date": "2022-12-08",
+      "capital": 1259714,
+      "benchmarkCapital": 1439109
+    },
+    {
+      "date": "2022-12-15",
+      "capital": 1259714,
+      "benchmarkCapital": 1423628
+    },
+    {
+      "date": "2022-12-22",
+      "capital": 1227671,
+      "benchmarkCapital": 1360051
+    },
+    {
+      "date": "2022-12-29",
+      "capital": 1248140,
+      "benchmarkCapital": 1382728
+    },
+    {
+      "date": "2023-01-06",
+      "capital": 1262464,
+      "benchmarkCapital": 1428720
+    },
+    {
+      "date": "2023-01-13",
+      "capital": 1262464,
+      "benchmarkCapital": 1443416
+    },
+    {
+      "date": "2023-01-20",
+      "capital": 1316001,
+      "benchmarkCapital": 1506207
+    },
+    {
+      "date": "2023-02-03",
+      "capital": 1298856,
+      "benchmarkCapital": 1486585
+    },
+    {
+      "date": "2023-02-10",
+      "capital": 1304649,
+      "benchmarkCapital": 1493215
+    },
+    {
+      "date": "2023-02-17",
+      "capital": 1285853,
+      "benchmarkCapital": 1471702
+    },
+    {
+      "date": "2023-02-24",
+      "capital": 1292149,
+      "benchmarkCapital": 1478908
+    },
+    {
+      "date": "2023-03-03",
+      "capital": 1312195,
+      "benchmarkCapital": 1501851
+    },
+    {
+      "date": "2023-03-10",
+      "capital": 1266338,
+      "benchmarkCapital": 1449367
+    },
+    {
+      "date": "2023-03-17",
+      "capital": 1261668,
+      "benchmarkCapital": 1446400
+    },
+    {
+      "date": "2023-03-24",
+      "capital": 1269392,
+      "benchmarkCapital": 1470818
+    },
+    {
+      "date": "2023-03-31",
+      "capital": 1275050,
+      "benchmarkCapital": 1477374
+    },
+    {
+      "date": "2023-04-10",
+      "capital": 1285575,
+      "benchmarkCapital": 1489569
+    },
+    {
+      "date": "2023-04-17",
+      "capital": 1294610,
+      "benchmarkCapital": 1500038
+    },
+    {
+      "date": "2023-04-24",
+      "capital": 1243988,
+      "benchmarkCapital": 1441383
+    },
+    {
+      "date": "2023-05-04",
+      "capital": 1247844,
+      "benchmarkCapital": 1456198
+    },
+    {
+      "date": "2023-05-11",
+      "capital": 1222063,
+      "benchmarkCapital": 1437073
+    },
+    {
+      "date": "2023-05-18",
+      "capital": 1222063,
+      "benchmarkCapital": 1428724
+    },
+    {
+      "date": "2023-05-25",
+      "capital": 1222063,
+      "benchmarkCapital": 1401820
+    },
+    {
+      "date": "2023-06-01",
+      "capital": 1222063,
+      "benchmarkCapital": 1406849
+    },
+    {
+      "date": "2023-06-08",
+      "capital": 1222063,
+      "benchmarkCapital": 1396022
+    },
+    {
+      "date": "2023-06-15",
+      "capital": 1222063,
+      "benchmarkCapital": 1432168
+    },
+    {
+      "date": "2023-06-26",
+      "capital": 1183860,
+      "benchmarkCapital": 1388265
+    },
+    {
+      "date": "2023-07-03",
+      "capital": 1183860,
+      "benchmarkCapital": 1424056
+    },
+    {
+      "date": "2023-07-10",
+      "capital": 1183860,
+      "benchmarkCapital": 1411263
+    },
+    {
+      "date": "2023-07-17",
+      "capital": 1183860,
+      "benchmarkCapital": 1415021
+    },
+    {
+      "date": "2023-07-24",
+      "capital": 1183860,
+      "benchmarkCapital": 1406744
+    },
+    {
+      "date": "2023-07-31",
+      "capital": 1185172,
+      "benchmarkCapital": 1440960
+    },
+    {
+      "date": "2023-08-07",
+      "capital": 1178034,
+      "benchmarkCapital": 1432281
+    },
+    {
+      "date": "2023-08-14",
+      "capital": 1171570,
+      "benchmarkCapital": 1393095
+    },
+    {
+      "date": "2023-08-21",
+      "capital": 1171570,
+      "benchmarkCapital": 1352390
+    },
+    {
+      "date": "2023-08-28",
+      "capital": 1171570,
+      "benchmarkCapital": 1333799
+    },
+    {
+      "date": "2023-09-04",
+      "capital": 1171570,
+      "benchmarkCapital": 1381255
+    },
+    {
+      "date": "2023-09-11",
+      "capital": 1171570,
+      "benchmarkCapital": 1365313
+    },
+    {
+      "date": "2023-09-18",
+      "capital": 1171570,
+      "benchmarkCapital": 1349003
+    },
+    {
+      "date": "2023-09-25",
+      "capital": 1171570,
+      "benchmarkCapital": 1340438
+    },
+    {
+      "date": "2023-10-10",
+      "capital": 1171570,
+      "benchmarkCapital": 1338141
+    },
+    {
+      "date": "2023-10-17",
+      "capital": 1171570,
+      "benchmarkCapital": 1324319
+    },
+    {
+      "date": "2023-10-24",
+      "capital": 1171570,
+      "benchmarkCapital": 1282092
+    },
+    {
+      "date": "2023-10-31",
+      "capital": 1171570,
+      "benchmarkCapital": 1319080
+    },
+    {
+      "date": "2023-11-07",
+      "capital": 1171570,
+      "benchmarkCapital": 1336592
+    },
+    {
+      "date": "2023-11-14",
+      "capital": 1171570,
+      "benchmarkCapital": 1349032
+    },
+    {
+      "date": "2023-11-21",
+      "capital": 1171570,
+      "benchmarkCapital": 1338434
+    },
+    {
+      "date": "2023-11-28",
+      "capital": 1171570,
+      "benchmarkCapital": 1325441
+    },
+    {
+      "date": "2023-12-05",
+      "capital": 1171570,
+      "benchmarkCapital": 1285803
+    },
+    {
+      "date": "2023-12-12",
+      "capital": 1171570,
+      "benchmarkCapital": 1301235
+    },
+    {
+      "date": "2023-12-19",
+      "capital": 1171570,
+      "benchmarkCapital": 1267057
+    },
+    {
+      "date": "2023-12-26",
+      "capital": 1171570,
+      "benchmarkCapital": 1242696
+    },
+    {
+      "date": "2024-01-03",
+      "capital": 1171570,
+      "benchmarkCapital": 1271296
+    },
+    {
+      "date": "2024-01-10",
+      "capital": 1171570,
+      "benchmarkCapital": 1221433
+    },
+    {
+      "date": "2024-01-17",
+      "capital": 1171570,
+      "benchmarkCapital": 1193977
+    },
+    {
+      "date": "2024-01-24",
+      "capital": 1154827,
+      "benchmarkCapital": 1178151
+    },
+    {
+      "date": "2024-01-31",
+      "capital": 1096480,
+      "benchmarkCapital": 1120641
+    },
+    {
+      "date": "2024-02-07",
+      "capital": 1111668,
+      "benchmarkCapital": 1136164
+    },
+    {
+      "date": "2024-02-22",
+      "capital": 1183803,
+      "benchmarkCapital": 1209889
+    },
+    {
+      "date": "2024-02-29",
+      "capital": 1230736,
+      "benchmarkCapital": 1237376
+    },
+    {
+      "date": "2024-03-07",
+      "capital": 1229443,
+      "benchmarkCapital": 1236025
+    },
+    {
+      "date": "2024-03-14",
+      "capital": 1229443,
+      "benchmarkCapital": 1258817
+    },
+    {
+      "date": "2024-03-21",
+      "capital": 1229443,
+      "benchmarkCapital": 1282273
+    },
+    {
+      "date": "2024-03-28",
+      "capital": 1229443,
+      "benchmarkCapital": 1242478
+    },
+    {
+      "date": "2024-04-08",
+      "capital": 1229443,
+      "benchmarkCapital": 1247141
+    },
+    {
+      "date": "2024-04-15",
+      "capital": 1229443,
+      "benchmarkCapital": 1228148
+    },
+    {
+      "date": "2024-04-22",
+      "capital": 1256201,
+      "benchmarkCapital": 1220887
+    },
+    {
+      "date": "2024-04-29",
+      "capital": 1256201,
+      "benchmarkCapital": 1272360
+    },
+    {
+      "date": "2024-05-09",
+      "capital": 1256201,
+      "benchmarkCapital": 1292890
+    },
+    {
+      "date": "2024-05-16",
+      "capital": 1256201,
+      "benchmarkCapital": 1271618
+    },
+    {
+      "date": "2024-05-23",
+      "capital": 1247346,
+      "benchmarkCapital": 1261078
+    },
+    {
+      "date": "2024-05-30",
+      "capital": 1247346,
+      "benchmarkCapital": 1248023
+    },
+    {
+      "date": "2024-06-06",
+      "capital": 1247346,
+      "benchmarkCapital": 1222186
+    },
+    {
+      "date": "2024-06-14",
+      "capital": 1247346,
+      "benchmarkCapital": 1211948
+    },
+    {
+      "date": "2024-06-21",
+      "capital": 1247346,
+      "benchmarkCapital": 1190229
+    },
+    {
+      "date": "2024-06-28",
+      "capital": 1247346,
+      "benchmarkCapital": 1173981
+    },
+    {
+      "date": "2024-07-05",
+      "capital": 1247346,
+      "benchmarkCapital": 1157001
+    },
+    {
+      "date": "2024-07-12",
+      "capital": 1265367,
+      "benchmarkCapital": 1170650
+    },
+    {
+      "date": "2024-07-19",
+      "capital": 1265367,
+      "benchmarkCapital": 1175428
+    },
+    {
+      "date": "2024-07-26",
+      "capital": 1263583,
+      "benchmarkCapital": 1142059
+    },
+    {
+      "date": "2024-08-02",
+      "capital": 1293107,
+      "benchmarkCapital": 1142591
+    },
+    {
+      "date": "2024-08-09",
+      "capital": 1276967,
+      "benchmarkCapital": 1129515
+    },
+    {
+      "date": "2024-08-16",
+      "capital": 1276381,
+      "benchmarkCapital": 1128997
+    },
+    {
+      "date": "2024-08-23",
+      "capital": 1252292,
+      "benchmarkCapital": 1107689
+    },
+    {
+      "date": "2024-08-30",
+      "capital": 1263986,
+      "benchmarkCapital": 1118033
+    },
+    {
+      "date": "2024-09-06",
+      "capital": 1243612,
+      "benchmarkCapital": 1087647
+    },
+    {
+      "date": "2024-09-13",
+      "capital": 1223830,
+      "benchmarkCapital": 1070346
+    },
+    {
+      "date": "2024-09-24",
+      "capital": 1309019,
+      "benchmarkCapital": 1144852
+    },
+    {
+      "date": "2024-10-08",
+      "capital": 1436883,
+      "benchmarkCapital": 1430625
+    },
+    {
+      "date": "2024-10-15",
+      "capital": 1303541,
+      "benchmarkCapital": 1297863
+    },
+    {
+      "date": "2024-10-22",
+      "capital": 1379211,
+      "benchmarkCapital": 1373203
+    },
+    {
+      "date": "2024-10-29",
+      "capital": 1384395,
+      "benchmarkCapital": 1378365
+    },
+    {
+      "date": "2024-11-05",
+      "capital": 1448150,
+      "benchmarkCapital": 1441842
+    },
+    {
+      "date": "2024-11-12",
+      "capital": 1468730,
+      "benchmarkCapital": 1462332
+    },
+    {
+      "date": "2024-11-19",
+      "capital": 1414072,
+      "benchmarkCapital": 1407913
+    },
+    {
+      "date": "2024-11-26",
+      "capital": 1372121,
+      "benchmarkCapital": 1366144
+    },
+    {
+      "date": "2024-12-03",
+      "capital": 1435699,
+      "benchmarkCapital": 1429445
+    },
+    {
+      "date": "2024-12-10",
+      "capital": 1449823,
+      "benchmarkCapital": 1443508
+    },
+    {
+      "date": "2024-12-17",
+      "capital": 1418057,
+      "benchmarkCapital": 1411880
+    },
+    {
+      "date": "2024-12-24",
+      "capital": 1421504,
+      "benchmarkCapital": 1415312
+    },
+    {
+      "date": "2024-12-31",
+      "capital": 1385718,
+      "benchmarkCapital": 1379682
+    },
+    {
+      "date": "2025-01-08",
+      "capital": 1326530,
+      "benchmarkCapital": 1320752
+    },
+    {
+      "date": "2025-01-15",
+      "capital": 1350924,
+      "benchmarkCapital": 1345040
+    },
+    {
+      "date": "2025-01-22",
+      "capital": 1363907,
+      "benchmarkCapital": 1357966
+    },
+    {
+      "date": "2025-02-06",
+      "capital": 1381588,
+      "benchmarkCapital": 1375570
+    },
+    {
+      "date": "2025-02-13",
+      "capital": 1412625,
+      "benchmarkCapital": 1406472
+    },
+    {
+      "date": "2025-02-20",
+      "capital": 1435597,
+      "benchmarkCapital": 1429344
+    },
+    {
+      "date": "2025-02-27",
+      "capital": 1448149,
+      "benchmarkCapital": 1441841
+    },
+    {
+      "date": "2025-03-06",
+      "capital": 1451653,
+      "benchmarkCapital": 1445330
+    },
+    {
+      "date": "2025-03-13",
+      "capital": 1442455,
+      "benchmarkCapital": 1436172
+    },
+    {
+      "date": "2025-03-20",
+      "capital": 1460117,
+      "benchmarkCapital": 1453757
+    },
+    {
+      "date": "2025-03-27",
+      "capital": 1431986,
+      "benchmarkCapital": 1425749
+    },
+    {
+      "date": "2025-04-03",
+      "capital": 1327702,
+      "benchmarkCapital": 1321919
+    },
+    {
+      "date": "2025-04-11",
+      "capital": 1292077,
+      "benchmarkCapital": 1350304
+    },
+    {
+      "date": "2025-04-18",
+      "capital": 1283001,
+      "benchmarkCapital": 1340819
+    },
+    {
+      "date": "2025-04-25",
+      "capital": 1297824,
+      "benchmarkCapital": 1356310
+    },
+    {
+      "date": "2025-05-07",
+      "capital": 1324669,
+      "benchmarkCapital": 1384365
+    },
+    {
+      "date": "2025-05-14",
+      "capital": 1350533,
+      "benchmarkCapital": 1411394
+    },
+    {
+      "date": "2025-05-21",
+      "capital": 1345536,
+      "benchmarkCapital": 1406172
+    },
+    {
+      "date": "2025-05-28",
+      "capital": 1321570,
+      "benchmarkCapital": 1381126
+    },
+    {
+      "date": "2025-06-05",
+      "capital": 1346361,
+      "benchmarkCapital": 1407034
+    },
+    {
+      "date": "2025-06-12",
+      "capital": 1350575,
+      "benchmarkCapital": 1411438
+    },
+    {
+      "date": "2025-06-19",
+      "capital": 1326110,
+      "benchmarkCapital": 1385871
+    },
+    {
+      "date": "2025-06-26",
+      "capital": 1370157,
+      "benchmarkCapital": 1431903
+    },
+    {
+      "date": "2025-07-03",
+      "capital": 1384256,
+      "benchmarkCapital": 1446638
+    },
+    {
+      "date": "2025-07-10",
+      "capital": 1399101,
+      "benchmarkCapital": 1462151
+    },
+    {
+      "date": "2025-07-17",
+      "capital": 1418415,
+      "benchmarkCapital": 1482336
+    },
+    {
+      "date": "2025-07-24",
+      "capital": 1455085,
+      "benchmarkCapital": 1520658
+    },
+    {
+      "date": "2025-07-31",
+      "capital": 1437125,
+      "benchmarkCapital": 1501888
+    },
+    {
+      "date": "2025-08-07",
+      "capital": 1463929,
+      "benchmarkCapital": 1529900
+    },
+    {
+      "date": "2025-08-14",
+      "capital": 1481634,
+      "benchmarkCapital": 1548403
+    },
+    {
+      "date": "2025-08-21",
+      "capital": 1538037,
+      "benchmarkCapital": 1607348
+    },
+    {
+      "date": "2025-08-28",
+      "capital": 1586696,
+      "benchmarkCapital": 1658200
+    },
+    {
+      "date": "2025-09-04",
+      "capital": 1532050,
+      "benchmarkCapital": 1601091
+    },
+    {
+      "date": "2025-09-11",
+      "capital": 1604648,
+      "benchmarkCapital": 1676961
+    },
+    {
+      "date": "2025-09-18",
+      "capital": 1604414,
+      "benchmarkCapital": 1676716
+    },
+    {
+      "date": "2025-09-25",
+      "capital": 1616198,
+      "benchmarkCapital": 1689031
+    },
+    {
+      "date": "2025-10-10",
+      "capital": 1575825,
+      "benchmarkCapital": 1646839
+    },
+    {
+      "date": "2025-10-17",
+      "capital": 1588797,
+      "benchmarkCapital": 1660395
+    },
+    {
+      "date": "2025-10-24",
+      "capital": 1639178,
+      "benchmarkCapital": 1713047
+    },
+    {
+      "date": "2025-10-31",
+      "capital": 1632350,
+      "benchmarkCapital": 1705912
+    },
+    {
+      "date": "2025-11-07",
+      "capital": 1647191,
+      "benchmarkCapital": 1721422
+    },
+    {
+      "date": "2025-11-14",
+      "capital": 1633501,
+      "benchmarkCapital": 1707114
+    },
+    {
+      "date": "2025-11-21",
+      "capital": 1559161,
+      "benchmarkCapital": 1629425
+    },
+    {
+      "date": "2025-11-28",
+      "capital": 1599618,
+      "benchmarkCapital": 1671704
+    },
+    {
+      "date": "2025-12-05",
+      "capital": 1611381,
+      "benchmarkCapital": 1683997
+    },
+    {
+      "date": "2025-12-12",
+      "capital": 1600594,
+      "benchmarkCapital": 1672725
+    },
+    {
+      "date": "2025-12-19",
+      "capital": 1614260,
+      "benchmarkCapital": 1687006
+    },
+    {
+      "date": "2025-12-26",
+      "capital": 1652678,
+      "benchmarkCapital": 1727155
+    },
+    {
+      "date": "2026-01-06",
+      "capital": 1708612,
+      "benchmarkCapital": 1785610
+    },
+    {
+      "date": "2026-01-13",
+      "capital": 1740713,
+      "benchmarkCapital": 1819158
+    },
+    {
+      "date": "2026-01-20",
+      "capital": 1728744,
+      "benchmarkCapital": 1806650
+    },
+    {
+      "date": "2026-01-27",
+      "capital": 1763596,
+      "benchmarkCapital": 1843072
+    },
+    {
+      "date": "2026-02-03",
+      "capital": 1725821,
+      "benchmarkCapital": 1803594
+    },
+    {
+      "date": "2026-02-10",
+      "capital": 1745657,
+      "benchmarkCapital": 1824324
+    },
+    {
+      "date": "2026-02-25",
+      "capital": 1772453,
+      "benchmarkCapital": 1852328
+    },
+    {
+      "date": "2026-03-04",
+      "capital": 1733364,
+      "benchmarkCapital": 1811478
+    },
+    {
+      "date": "2026-03-11",
+      "capital": 1755111,
+      "benchmarkCapital": 1834204
+    },
+    {
+      "date": "2026-03-18",
+      "capital": 1696496,
+      "benchmarkCapital": 1772949
+    },
+    {
+      "date": "2026-03-25",
+      "capital": 1651766,
+      "benchmarkCapital": 1726203
+    },
+    {
+      "date": "2026-04-01",
+      "capital": 1649598,
+      "benchmarkCapital": 1723937
+    },
+    {
+      "date": "2026-04-09",
+      "capital": 1686343,
+      "benchmarkCapital": 1762338
+    },
+    {
+      "date": "2026-04-16",
+      "capital": 1732847,
+      "benchmarkCapital": 1810937
+    },
+    {
+      "date": "2026-04-23",
+      "capital": 1746115,
+      "benchmarkCapital": 1824803
+    },
+    {
+      "date": "2026-04-30",
+      "capital": 1782110,
+      "benchmarkCapital": 1862420
+    },
+    {
+      "date": "2026-05-12",
+      "capital": 1827380,
+      "benchmarkCapital": 1909730
+    },
+    {
+      "date": "2026-05-19",
+      "capital": 1807157,
+      "benchmarkCapital": 1888596
+    },
+    {
+      "date": "2026-05-26",
+      "capital": 1815428,
+      "benchmarkCapital": 1897240
+    },
+    {
+      "date": "2026-06-02",
+      "capital": 1772754,
+      "benchmarkCapital": 1852643
+    },
+    {
+      "date": "2026-06-09",
+      "capital": 1723051,
+      "benchmarkCapital": 1800700
+    },
+    {
+      "date": "2026-06-16",
+      "capital": 1776225,
+      "benchmarkCapital": 1856270
+    },
+    {
+      "date": "2026-06-24",
+      "capital": 1819378,
+      "benchmarkCapital": 1901368
+    },
+    {
+      "date": "2026-07-01",
+      "capital": 1791141,
+      "benchmarkCapital": 1871858
+    },
+    {
+      "date": "2026-07-08",
+      "capital": 1720343,
+      "benchmarkCapital": 1797870
+    },
+    {
+      "date": "2026-07-15",
+      "capital": 1626556,
+      "benchmarkCapital": 1740224
+    },
+    {
+      "date": "2026-07-22",
+      "capital": 1624848,
+      "benchmarkCapital": 1687313
+    },
+    {
+      "date": "2026-07-29",
+      "capital": 1624848,
+      "benchmarkCapital": 1644458
+    },
+    {
+      "date": "2026-08-04",
+      "capital": 1624848,
+      "benchmarkCapital": 1653970
+    }
+  ],
+  "disclosure": "中证全指指数代理回测；实盘需映射为可交易宽基ETF或股票组合"
+}

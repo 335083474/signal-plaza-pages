@@ -1,0 +1,1 @@
+import{b as e,i as t}from"./chart-BK7y1WKE.js";import{C as n,b as r}from"./index-vajRiDdP.js";var i=n(r()),a=[`axis`],o=(0,i.forwardRef)((n,r)=>i.createElement(t,{chartName:`LineChart`,defaultTooltipEventType:`axis`,validateTooltipEventTypes:a,tooltipPayloadSearcher:e,categoricalChartProps:n,ref:r}));export{o as t};

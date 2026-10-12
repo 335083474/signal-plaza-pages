@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "strategyId": "strategy.fp_trend_breakout.v1",
+  "name": "顺势·流动性突破 v1",
+  "status": "RESEARCH",
+  "asOf": "2026-08-04",
+  "reportingStart": "2019-01-02",
+  "method": "每5个交易日收盘决策，下一交易日开盘执行；未做参数搜索",
+  "costs": {
+    "roundTripPct": 0.21
+  },
+  "fullPeriod": {
+    "tradingDays": 1840,
+    "totalReturnPct": -25.45,
+    "annualReturnPct": -3.94,
+    "annualVolatilityPct": 26.89,
+    "sharpe": -0.014,
+    "maxDrawdownPct": -61.01,
+    "calmar": -0.065
+  },
+  "splits": {
+    "development": {
+      "label": "开发期",
+      "range": "2019-01-02 至 2020-12-31",
+      "tradingDays": 487,
+      "totalReturnPct": -2.2,
+      "annualReturnPct": -1.14,
+      "annualVolatilityPct": 30.3,
+      "sharpe": 0.115,
+      "maxDrawdownPct": -29.8,
+      "calmar": -0.038,
+      "benchmark": {
+        "tradingDays": 487,
+        "totalReturnPct": 63.8,
+        "annualReturnPct": 29.09,
+        "annualVolatilityPct": 23.33,
+        "sharpe": 1.213,
+        "maxDrawdownPct": -16.99,
+        "calmar": 1.712
+      },
+      "periods": 98,
+      "activePeriods": 83,
+      "periodWinRatePct": 53.01,
+      "averageTurnoverPct": 59.45
+    },
+    "validation": {
+      "label": "验证期",
+      "range": "2021-01-01 至 2022-12-31",
+      "tradingDays": 485,
+      "totalReturnPct": -21.58,
+      "annualReturnPct": -11.86,
+      "annualVolatilityPct": 25.92,
+      "sharpe": -0.357,
+      "maxDrawdownPct": -37.05,
+      "calmar": -0.32,
+      "benchmark": {
+        "tradingDays": 485,
+        "totalReturnPct": -15.61,
+        "annualReturnPct": -8.44,
+        "annualVolatilityPct": 18.88,
+        "sharpe": -0.373,
+        "maxDrawdownPct": -28.64,
+        "calmar": -0.295
+      },
+      "periods": 97,
+      "activePeriods": 50,
+      "periodWinRatePct": 46.0,
+      "averageTurnoverPct": 64.08
+    },
+    "holdout": {
+      "label": "保留期",
+      "range": "2023-01-01 至 2026-08-04",
+      "tradingDays": 868,
+      "totalReturnPct": -2.8,
+      "annualReturnPct": -0.82,
+      "annualVolatilityPct": 25.33,
+      "sharpe": 0.095,
+      "maxDrawdownPct": -39.08,
+      "calmar": -0.021,
+      "benchmark": {
+        "tradingDays": 867,
+        "totalReturnPct": 19.66,
+        "annualReturnPct": 5.36,
+        "annualVolatilityPct": 22.45,
+        "sharpe": 0.343,
+        "maxDrawdownPct": -30.27,
+        "calmar": 0.177
+      },
+      "periods": 172,
+      "activePeriods": 95,
+      "periodWinRatePct": 56.84,
+      "averageTurnoverPct": 62.07
+    }
+  },
+  "audit": {
+    "parameterSearch": false,
+    "lookaheadGuard": "all target inputs are observed on decision close; returns start at next open",
+    "averageHoldings": 8.74,
+    "cashDayPct": 41.58,
+    "limitations": [
+      "not a fill-level account simulation",
+      "no queue model for price-limit boards",
+      "no market-impact model"
+    ]
+  }
+}
