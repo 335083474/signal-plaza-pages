@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-12",
-  "web_version": "web-20261014-110208-024584",
+  "web_version": "web-20261014-123608-581040",
   "generation": "2026-10-12-3cbd3bd44625",
   "expanded_version": "2026-10-12-f433e6615d1a2614",
   "default_history": {
@@ -30,5 +30,14 @@
   "point_in_time_safe": false,
   "history_api": "local_only",
   "daily_update_time": "23:00 Asia/Shanghai",
-  "scope": "已验收网页展示快照；原始数据、历史明细与账户仅保留本机"
+  "scope": "已验收网页展示快照；原始数据、历史明细与账户仅保留本机",
+  "stock_display": {
+    "stocks": 5887,
+    "defaultStocks": 5166,
+    "expandedStocks": 5514,
+    "expandedEvents": 1674542,
+    "expandedFormulaIds": 620,
+    "noCurrentBar": 326,
+    "shortHistory": 48
+  }
 }
