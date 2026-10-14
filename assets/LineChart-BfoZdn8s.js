@@ -1,0 +1,1 @@
+import{E as e,k as t}from"./index-DwKMKxTv.js";import{t as n,y as r}from"./CartesianChart-Cdtl5khl.js";var i=t(e()),a=[`axis`],o=(0,i.forwardRef)((e,t)=>i.createElement(n,{chartName:`LineChart`,defaultTooltipEventType:`axis`,validateTooltipEventTypes:a,tooltipPayloadSearcher:r,categoricalChartProps:e,ref:t}));export{o as t};
