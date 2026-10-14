@@ -1,0 +1,1 @@
+import{t as e}from"./signal-dashboard-D5mEGdAW.js";import{i as t}from"./index-1rP76r8h.js";var n=t();function r(){return(0,n.jsx)(e,{live:!0})}export{r as default};
