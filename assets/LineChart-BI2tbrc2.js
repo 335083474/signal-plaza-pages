@@ -1,0 +1,1 @@
+import{D as e,w as t}from"./index-BFSKPP4d.js";import{t as n,y as r}from"./CartesianChart-DWs-Xm-D.js";var i=e(t()),a=[`axis`],o=(0,i.forwardRef)((e,t)=>i.createElement(n,{chartName:`LineChart`,defaultTooltipEventType:`axis`,validateTooltipEventTypes:a,tooltipPayloadSearcher:r,categoricalChartProps:e,ref:t}));export{o as t};
