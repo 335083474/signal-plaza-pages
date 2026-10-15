@@ -1,23 +1,23 @@
 {
-  "as_of": "2026-10-14",
-  "web_version": "web-20261015-025702-020645",
-  "generation": "2026-10-14-7e60aa0dbf78",
-  "expanded_version": "2026-10-14-dcd17c88ef3aac27",
+  "as_of": "2026-10-15",
+  "web_version": "web-20261016-023044-194363",
+  "generation": "2026-10-15-c11162a46345",
+  "expanded_version": "2026-10-15-e9b7082f1c24ca37",
   "default_history": {
     "start_date": "2015-03-13",
-    "end_date": "2026-10-14",
-    "trading_dates": 2264,
-    "stocks": 5568,
+    "end_date": "2026-10-15",
+    "trading_dates": 2265,
+    "stocks": 5570,
     "formula_ids": 68,
     "event_rules": 68,
-    "rows": 16416499
+    "rows": 16431760
   },
   "expanded_history": {
     "start_date": "2005-01-12",
-    "end_date": "2026-10-14",
-    "calculation_cutoff": "2026-10-14",
-    "rows": 4346115342,
-    "stocks": 5839,
+    "end_date": "2026-10-15",
+    "calculation_cutoff": "2026-10-15",
+    "rows": 4347732570,
+    "stocks": 5840,
     "formula_ids": 633,
     "computed_formulas": 647,
     "event_formulas": 633
@@ -32,12 +32,12 @@
   "daily_update_time": "23:00 Asia/Shanghai",
   "scope": "已验收网页展示快照；原始数据、历史明细与账户仅保留本机",
   "stock_display": {
-    "stocks": 5888,
-    "defaultStocks": 5115,
-    "expandedStocks": 5515,
-    "expandedEvents": 1556829,
+    "stocks": 5890,
+    "defaultStocks": 5057,
+    "expandedStocks": 5516,
+    "expandedEvents": 1617228,
     "expandedFormulaIds": 621,
     "noCurrentBar": 325,
-    "shortHistory": 49
+    "shortHistory": 50
   }
 }
